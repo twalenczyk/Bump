@@ -1,0 +1,3 @@
+rootProject.name = 'bump2'
+
+include ':app'
