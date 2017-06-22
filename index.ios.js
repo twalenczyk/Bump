@@ -5,7 +5,7 @@
  */
 
 
- import { AppRegistry } from 'react-native';
- import bump2 from './app/index';
+import { AppRegistry } from 'react-native'
+import bump2 from './app/index'
 
-AppRegistry.registerComponent('bump2', () => bump2);
+AppRegistry.registerComponent('bump2', () => bump2)
