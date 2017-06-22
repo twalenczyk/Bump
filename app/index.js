@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Feed from './config/router';
+import LoginNavigator from './config/router';
 
 class bump2 extends Component {
   render() {
-    return <Feed />;
+    return <LoginNavigator />;
   }
 }
 

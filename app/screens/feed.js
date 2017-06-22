@@ -8,6 +8,7 @@ import {
 import styles from './styles'
 
 class Feed extends Component {
+
   render () {
     return (
       <View style={styles.container}>

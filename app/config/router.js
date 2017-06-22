@@ -1,6 +1,16 @@
 import React from 'react'
 import { TabNavigator, StackNavigator } from 'react-navigation'
 
-import Feed from '../screens/feed.js'
+import Login from '../screens/login'
+import Feed from '../screens/feed'
 
-export default Feed
+const LoginNavigator = StackNavigator({
+  Login: {
+    screen: Login,
+  },
+  Feed: {
+    screen: Feed,
+  },
+})
+
+export default LoginNavigator

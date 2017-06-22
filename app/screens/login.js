@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import {
   Text,
   View,
-  ScrollView
+  Button
 } from 'react-native'
+import { TabNavigator, StackNavigator } from 'react-navigation'
 
+
+import Feed from './feed'
 import styles from './styles'
 
 class Login extends Component {
@@ -14,11 +17,12 @@ class Login extends Component {
         <Text style={styles.welcome}>
           This screen will be the login page!
         </Text>
+        <Button onPress={() => this.props.navigation.navigate('Feed')} title='Login'>
+
+        </Button>
       </View>
     )
   }
 }
-
-
 
 export default Login
