@@ -2,16 +2,15 @@ import React, { Component } from 'react'
 import {
   Text,
   View,
-  Button,
   ScrollView,
   TouchableHighlight
 } from 'react-native'
 
 import styles from './styles'
 
-class Feed extends Component {
-  postNavigate = (post) => {
-    this.props.navigation.navigate('Post', post)
+class Connections extends Component {
+  messageNavigate = (connection) => {
+    this.props.navigation.navigate('Direct Message', connection)
   }
 
   state = {
@@ -38,16 +37,12 @@ class Feed extends Component {
           <Text>
             Bump
           </Text>
-          <Button
-            onPress={() => this.props.navigation.navigate('New Post')}
-            title='New Post'
-            />
         </View>
         <View style={styles.feedScrollContainer}>
           <ScrollView>
             {
               this.state.names.map((item, index) => (
-                <TouchableHighlight key={item.id} onPress={this.postNavigate} underlayColor="white">
+                <TouchableHighlight key={item.id} onPress={this.messageNavigate} underlayColor="white">
                   <View style={styles.item}>
                     <Text>{item.name}</Text>
                   </View>
@@ -63,4 +58,4 @@ class Feed extends Component {
 
 
 
-export default Feed
+export default Connections

@@ -40,6 +40,19 @@ const styles = StyleSheet.create({
       borderColor: '#2a4944',
       borderWidth: 1,
       backgroundColor: '#d2f7f1'
+   },
+   feedHeader: {
+     flex: 1,
+     flexDirection: 'row',
+     justifyContent: 'space-between',
+     alignItems: 'center',
+     backgroundColor: '#F5FCFF',
+   },
+   feedScrollContainer: {
+     flex: 15
+   },
+   feedContainer: {
+     flex: 1
    }
 })
 

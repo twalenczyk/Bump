@@ -1,10 +1,15 @@
 import React from 'react'
 import { TabNavigator, StackNavigator } from 'react-navigation'
 
-import Login from '../screens/login'
+import Connections from '../screens/connections'
+import DirectMessage from '../screens/direct-message'
 import Feed from '../screens/feed'
-import Profile from '../screens/profile'
+import Login from '../screens/login'
+import NewPost from '../screens/new-post'
 import Post from '../screens/post'
+import Profile from '../screens/profile'
+import QrGenerator from '../screens/qr-generator'
+import SignUp from '../screens/sign-up'
 
 // Registers a TabNavigator for the main portion of the app
 const FeedTabs = TabNavigator({
@@ -12,6 +17,12 @@ const FeedTabs = TabNavigator({
     screen: Feed,
     navigationOptions: {
       title: 'Feed'
+    }
+  },
+  'QR Generator': {
+    screen: QrGenerator,
+    navigationOptions: {
+      title: 'QR'
     }
   },
   Profile: {
@@ -37,6 +48,30 @@ const MainNavigator = StackNavigator({
     screen: Post,
     navigationOptions: {
       title: 'Post'
+    }
+  },
+  'New Post': {
+    screen: NewPost,
+    navigationOptions: {
+      title: 'New Post'
+    }
+  },
+  'Sign Up': {
+    screen: SignUp,
+    navigationOptions: {
+      title: 'Sign Up'
+    }
+  },
+  Connections: {
+    screen: Connections,
+    navigationOptions: {
+      title: 'Connections'
+    }
+  },
+  'Direct Message': {
+    screen: DirectMessage,
+    navigationOptions: {
+      title: 'Direct Message'
     }
   }
 
