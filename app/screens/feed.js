@@ -3,12 +3,16 @@ import {
   Text,
   View,
   ScrollView,
-  FlatList
+  TouchableHighlight
 } from 'react-native'
 
 import styles from './styles'
 
 class Feed extends Component {
+
+  postNavigate = (post) => {
+    this.props.navigation.navigate('Post', post)
+  }
 
   state = {
       names: [
@@ -25,7 +29,7 @@ class Feed extends Component {
          {'name': 'Steve', 'id': 11},
          {'name': 'Olivia', 'id': 12}
       ]
-   }
+  }
 
   render () {
     return (
@@ -33,9 +37,11 @@ class Feed extends Component {
         <ScrollView>
           {
             this.state.names.map((item, index) => (
-               <View key = {item.id} style = {styles.item}>
+              <TouchableHighlight key={item.id} onPress={this.postNavigate} underlayColor="white">
+                <View style={styles.item}>
                   <Text>{item.name}</Text>
-               </View>
+                </View>
+              </TouchableHighlight>
             ))
            }
         </ScrollView>

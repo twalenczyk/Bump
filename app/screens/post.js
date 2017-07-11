@@ -6,12 +6,12 @@ import {
 
 import styles from './styles'
 
-class Profile extends Component {
+class Post extends Component {
   render () {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          This screen will be the profile!
+          This screen will be the a post!
         </Text>
       </View>
     )
@@ -20,4 +20,4 @@ class Profile extends Component {
 
 
 
-export default Profile
+export default Post
