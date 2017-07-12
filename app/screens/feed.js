@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 
 import styles from './styles'
+import AppHeader from '../components/app-header'
 
 class Feed extends Component {
   postNavigate = (post) => {
@@ -34,15 +35,7 @@ class Feed extends Component {
   render () {
     return (
       <View style={styles.feedContainer}>
-        <View style={styles.feedHeader}>
-          <Text>
-            Bump
-          </Text>
-          <Button
-            onPress={() => this.props.navigation.navigate('New Post')}
-            title='New Post'
-            />
-        </View>
+        <AppHeader />
         <View style={styles.feedScrollContainer}>
           <ScrollView>
             {
