@@ -4,9 +4,13 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
+  },
+  loginContainer: {
+    flex: 1,
     backgroundColor: '#F5FCFF',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   welcome: {
     fontSize: 20,
@@ -41,18 +45,8 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       backgroundColor: '#d2f7f1'
    },
-   feedHeader: {
-     flex: 1,
-     flexDirection: 'row',
-     justifyContent: 'space-between',
-     alignItems: 'center',
-     backgroundColor: '#F5FCFF',
-   },
-   feedScrollContainer: {
+   appBody: {
      flex: 15
-   },
-   feedContainer: {
-     flex: 1
    }
 })
 

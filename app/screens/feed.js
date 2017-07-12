@@ -34,9 +34,9 @@ class Feed extends Component {
 
   render () {
     return (
-      <View style={styles.feedContainer}>
+      <View style={styles.container}>
         <AppHeader />
-        <View style={styles.feedScrollContainer}>
+        <View style={styles.appBody}>
           <ScrollView>
             {
               this.state.names.map((item, index) => (

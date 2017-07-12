@@ -6,18 +6,22 @@ import {
 } from 'react-native'
 
 import styles from './styles'
+import AppHeader from '../components/app-header'
 
 class Profile extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          This screen will be the profile!
-        </Text>
-        <Button
-          onPress={() => this.props.navigation.navigate('Connections')}
-          title='Check your connections'
-          />
+        <AppHeader />
+        <View style={styles.appBody}>
+          <Text style={styles.welcome}>
+            This screen will be the profile!
+          </Text>
+          <Button
+            onPress={() => this.props.navigation.navigate('Connections')}
+            title='Check your connections'
+            />
+        </View>
       </View>
     )
   }

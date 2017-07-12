@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 
 import styles from './styles'
+import AppHeader from '../components/app-header'
 
 class Connections extends Component {
   messageNavigate = (connection) => {
@@ -33,11 +34,7 @@ class Connections extends Component {
   render () {
     return (
       <View style={styles.feedContainer}>
-        <View style={styles.feedHeader}>
-          <Text>
-            Bump
-          </Text>
-        </View>
+        <AppHeader />
         <View style={styles.feedScrollContainer}>
           <ScrollView>
             {

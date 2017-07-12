@@ -17,7 +17,7 @@ class Login extends Component {
   }
   render () {
     return (
-      <View style={styles.container}>
+      <View style={styles.loginContainer}>
         <Text style={styles.loginBumpText}>
           Bump
         </Text>
