@@ -35,7 +35,12 @@ class Feed extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <AppHeader />
+        <AppHeader>
+          <Button
+            onPress={() => this.props.navigation.navigate('New Post')}
+            title='New Post'
+            />
+        </AppHeader>
         <View style={styles.appBody}>
           <ScrollView>
             {

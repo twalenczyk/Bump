@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  headerLogo: {
+    fontSize: 20
   }
 })
 

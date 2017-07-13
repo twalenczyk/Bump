@@ -12,13 +12,16 @@ class AppHeader extends Component {
   render () {
     return (
       <View style={styles.header}>
-        <Text>
-          Bump
-        </Text>
-        <Button
-          onPress={() => this.props.navigation.navigate('New Post')}
-          title='New Post'
-          />
+        <View>
+        </View>
+        <View>
+          <Text style={styles.headerLogo}>
+            Bump
+          </Text>
+        </View>
+        <View>
+          {this.props.children}
+        </View>
       </View>
     )
   }
