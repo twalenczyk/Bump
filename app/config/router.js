@@ -39,10 +39,7 @@ const MainNavigator = StackNavigator({
     screen: Login,
   },
   Feed: {
-    screen: FeedTabs,
-    navigationOptions: {
-      title: 'Feed'
-    }
+    screen: FeedTabs
   },
   Post: {
     screen: Post,
