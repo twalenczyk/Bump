@@ -12,7 +12,8 @@ class PostCard extends Component {
     return (
       <TouchableHighlight onPress={this.props.onPress} underlayColor='white'>
         <View style={styles.post}>
-          <Text>{this.props.content}</Text>
+          <Text>{this.props.post.name}</Text>
+          <Text>{this.props.post.content}</Text>
         </View>
       </TouchableHighlight>
     )
