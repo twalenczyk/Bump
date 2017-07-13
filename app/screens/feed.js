@@ -9,6 +9,7 @@ import {
 
 import styles from './styles'
 import AppHeader from '../components/app-header'
+import PostCard from '../components/post-card'
 
 class Feed extends Component {
   postNavigate = (post) => {
@@ -18,7 +19,7 @@ class Feed extends Component {
   state = {
       names: [
          {'name': 'Ben', 'id': 1},
-         {'name': 'Susan', 'id': 2},
+         {'name': 'Sarah', 'id': 2},
          {'name': 'Robert', 'id': 3},
          {'name': 'Mary', 'id': 4},
          {'name': 'Daniel', 'id': 5},
@@ -45,11 +46,7 @@ class Feed extends Component {
           <ScrollView>
             {
               this.state.names.map((item, index) => (
-                <TouchableHighlight key={item.id} onPress={this.postNavigate} underlayColor="white">
-                  <View style={styles.item}>
-                    <Text>{item.name}</Text>
-                  </View>
-                </TouchableHighlight>
+                <PostCard key={item.id} onPress={this.postNavigate} content={item.name} />
               ))
              }
           </ScrollView>
