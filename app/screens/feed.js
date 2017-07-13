@@ -41,7 +41,7 @@ class Feed extends Component {
             title='New Post'
             />
         </AppHeader>
-        <View style={styles.appBody}>
+        <View>
           <ScrollView>
             {
               this.state.names.map((item, index) => (
