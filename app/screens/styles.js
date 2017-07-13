@@ -63,7 +63,15 @@ const styles = StyleSheet.create({
   profileFeedContainer: {
     flex: 3,
     backgroundColor: '#F5FCFF'
-  }
+  },
+
+  /** Post Styles **/
+  
+  postContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#d2f7f1'
+  },
 })
 
 export default styles

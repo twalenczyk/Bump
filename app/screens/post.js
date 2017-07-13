@@ -5,16 +5,18 @@ import {
 } from 'react-native'
 
 import styles from './styles'
+import { posts } from '../config/data'
 import AppHeader from '../components/app-header'
+import PostSubstance from '../components/post-substance'
 
 class Post extends Component {
   render () {
     return (
       <View style={styles.container}>
         <AppHeader />
-        <Text style={styles.welcome}>
-          This screen will be the a post!
-        </Text>
+        <View style={styles.postContainer}>
+          <PostSubstance post={posts[0]}/>
+        </View>
       </View>
     )
   }
