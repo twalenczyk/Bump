@@ -36,12 +36,29 @@ class DirectMessage extends Component {
     return (
       <View style={styles.container}>
         <AppHeader />
-        <KeyboardAvoidingView style={{flex:1}}>
-          <Text style={styles.welcome}>
-            This screen will be the direct message screen, { name }!
-          </Text>
+        <KeyboardAvoidingView style={{flex:1}} behavior='padding' keyboardVerticalOffset={100}>
+          <ScrollView>
+              <Text style={styles.welcome}>
+                This screen will be the direct message screen, { name }!
+              </Text>
+              <Text style={styles.welcome}>
+                This screen will be the direct message screen, { name }!
+              </Text>
+              <Text style={styles.welcome}>
+                This screen will be the direct message screen, { name }!
+              </Text>
+              <Text style={styles.welcome}>
+                This screen will be the direct message screen, { name }!
+              </Text>
+              <Text style={styles.welcome}>
+                This screen will be the direct message screen, { name }!
+              </Text>
+              <Text style={styles.welcome}>
+                This screen will be the direct message screen, { name }!
+              </Text>
+          </ScrollView>
+          <TextInput style={styles.loginTextField} keyboardType='default' />
         </KeyboardAvoidingView>
-        <TextInput style={styles.loginTextField} keyboardType='default' />
       </View>
     )
   }
