@@ -12,7 +12,7 @@ import ConnectionCard from '../components/connection-card'
 
 class Connections extends Component {
   messageNavigate = (connection) => {
-    this.props.navigation.navigate('Direct Message', connection)
+    this.props.navigation.navigate('Direct Message', { ...connection })
   }
 
   state = {
@@ -40,7 +40,7 @@ class Connections extends Component {
           <ScrollView>
             {
               this.state.names.map((item, index) => (
-                <ConnectionCard key={item.id} connection={item} onPress={this.messageNavigate} />
+                <ConnectionCard key={item.id} connection={item} onPress={() => this.messageNavigate(item)} />
               ))
              }
           </ScrollView>
