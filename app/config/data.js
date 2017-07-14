@@ -1,6 +1,6 @@
 export const posts = [
    {'name': 'Ben', 'content': 'Sup', 'id': 1},
-   {'name': 'Susan', 'content': 'Hi', 'id': 2},
+   {'name': 'Sarah', 'content': 'Hi', 'id': 2},
    {'name': 'Robert', 'content': 'How do you do?', 'id': 3},
    {'name': 'Mary', 'content': 'Not bad', 'id': 4},
    {'name': 'Daniel', 'content': 'How about yourself?', 'id': 5},
@@ -12,7 +12,7 @@ export const posts = [
    {'name': 'Steve', 'content': 'Wait', 'id': 11},
    {'name': 'Olivia', 'content': 'We are.', 'id': 12},
    {'name': 'Ben', 'content': 'Sup', 'id': 13},
-   {'name': 'Susan', 'content': 'Hi', 'id': 14},
+   {'name': 'Sarah', 'content': 'Hi', 'id': 14},
    {'name': 'Robert', 'content': 'How do you do?', 'id': 15},
    {'name': 'Mary', 'content': 'Not bad', 'id': 16},
    {'name': 'Daniel', 'content': 'How about yourself?', 'id': 17},

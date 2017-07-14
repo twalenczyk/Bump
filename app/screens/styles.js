@@ -56,17 +56,26 @@ const styles = StyleSheet.create({
 
   /** Profile Styles **/
 
-  coverPhotoContainer: {
-    flex: 2,
+  profilePictureContainer: {
+    flex: 3,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
     backgroundColor: '#0066ff'
   },
   profileFeedContainer: {
-    flex: 3,
+    flex: 5,
     backgroundColor: '#F5FCFF'
+  },
+  profileDetailsContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'skyblue'
   },
 
   /** Post Styles **/
-  
+
   postContainer: {
     flex: 1,
     flexDirection: 'column',

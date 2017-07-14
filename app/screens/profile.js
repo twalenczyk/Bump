@@ -21,13 +21,14 @@ class Profile extends Component {
     return (
       <View style={styles.container}>
         <AppHeader />
-        <View style={styles.coverPhotoContainer}>
-        </View>
-        <View style={styles.profileFeedContainer}>
+        <View style={styles.profilePictureContainer} />
+        <View style={styles.profileDetailsContainer}>
           <Button
             onPress={() => this.props.navigation.navigate('Connections')}
             title='Check your connections'
             />
+        </View>
+        <View style={styles.profileFeedContainer}>
           <ScrollView>
             {
               posts.map((item, index) => (
