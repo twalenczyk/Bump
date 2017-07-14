@@ -5,5 +5,5 @@ export const loginValidation = (username, password) => {
   let filteredPassword = filteredUsername.filter( (user) => user.password === password ) // creates a list of users with this password
   let user = filteredPassword.length > 0 ? filteredPassword.pop() : false // filtered password should only have one user
 
-  return user ? true : false
+  return user ? {user: user, exists: true} : {user: '', exists: false}
 }
