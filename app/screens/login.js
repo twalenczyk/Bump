@@ -3,7 +3,8 @@ import {
   Text,
   TextInput,
   View,
-  Button
+  Button,
+  KeyboardAvoidingView
 } from 'react-native'
 
 
@@ -17,7 +18,7 @@ class Login extends Component {
   }
   render () {
     return (
-      <View style={styles.loginContainer}>
+      <KeyboardAvoidingView style={styles.loginContainer} behavior='padding'>
         <Text style={styles.loginBumpText}>
           Bump
         </Text>
@@ -40,7 +41,7 @@ class Login extends Component {
           onPress={() => this.props.navigation.navigate('Sign Up')}
           title='Sign Up'
           />
-      </View>
+      </KeyboardAvoidingView>
     )
   }
 }
