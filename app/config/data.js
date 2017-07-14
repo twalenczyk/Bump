@@ -26,5 +26,6 @@ export const posts = [
 ]
 
 export const users = [
-  {'name': 'Taylor Walenczyk', 'password': 'admin', 'id': 1}
+  {'name': 'Taylor Walenczyk', 'password': 'admin', 'id': 1},
+  {'name': '', 'password': '', 'id': 0}
 ]
