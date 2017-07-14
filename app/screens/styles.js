@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF'
+    backgroundColor: 'grey'
   },
   welcome: {
     fontSize: 20,
@@ -34,22 +34,54 @@ const styles = StyleSheet.create({
 
   loginContainer: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'grey',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  loginTextFieldContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 400,
   },
   loginTextField: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
+    padding: 5,
+    marginRight: 50,
+    marginLeft: 50,
     marginTop: 5,
     marginBottom: 5,
-    marginLeft: 20,
-    marginRight: 20
+    backgroundColor: 'white'
+  },
+  loginBumpTextContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-end'
   },
   loginBumpText: {
     fontSize: 50,
-    marginBottom: 50
+    color: 'orange'
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    width: 400
+  },
+  loginButton: {
+    backgroundColor: 'white',
+    height: 40,
+    marginLeft: 50,
+    marginRight: 50,
+    marginBottom: 5,
+  },
+  signupButton: {
+    backgroundColor: 'orange',
+    height: 40,
+    marginLeft: 50,
+    marginRight: 50
   },
 
   /** Feed Styles **/

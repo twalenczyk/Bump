@@ -33,7 +33,7 @@ class Feed extends Component {
             />
         </AppHeader>
         <View>
-          <Text> Hey user {this.state.user.name}!</Text>
+          <Text style={{color: 'white'}}> Hey user {this.state.user.name}!</Text>
           <ScrollView>
             {
               posts.map((item, index) => (

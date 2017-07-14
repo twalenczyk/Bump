@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
   post: {
     flex: 1,
     flexDirection: 'column',
-    margin: 2,
     borderColor: '#2a4944',
     borderWidth: 1,
     backgroundColor: '#d2f7f1'
