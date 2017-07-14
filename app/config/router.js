@@ -15,6 +15,7 @@ import SignUp from '../screens/sign-up'
 const FeedTabs = TabNavigator({
   Feed: {
     screen: Feed,
+    path: 'feed/:user',
     navigationOptions: {
       title: 'Feed'
     }
