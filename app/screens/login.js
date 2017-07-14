@@ -20,9 +20,9 @@ class Login extends Component {
 
   login = (username, password) => {
     let user = loginValidation(username, password)
-    user.exists ? this.feedNavigate(user.user) : this.badLogin()
+    user.exists ? this.feedNavigate(user.user.id) : this.badLogin()
   }
-  feedNavigate = (user) => { this.props.navigation.navigate('Feed', { ...user }) }
+  feedNavigate = (userId) => { this.props.navigation.navigate('Feed', { user: userId}) }
   badLogin = () => { alert('Bad Login') }
 
   render () {

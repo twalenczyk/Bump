@@ -9,10 +9,16 @@ import {
 
 import styles from './styles'
 import { posts } from '../config/data'
+import { getUser } from '../lib/pulls'
 import AppHeader from '../components/app-header'
 import PostCard from '../components/post-card'
 
 class Feed extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { user: getUser(this.props.navigation.state.params.user) }
+  }
+
   postNavigate = (post) => {
     this.props.navigation.navigate('Post', post)
   }
@@ -27,6 +33,7 @@ class Feed extends Component {
             />
         </AppHeader>
         <View>
+          <Text> Hey user {this.state.user.name}!</Text>
           <ScrollView>
             {
               posts.map((item, index) => (
