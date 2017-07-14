@@ -24,3 +24,7 @@ export const posts = [
    {'name': 'Steve', 'content': 'Wait', 'id': 23},
    {'name': 'Olivia', 'content': 'We are.', 'id': 24}
 ]
+
+export const users = [
+  {'name': 'Taylor Walenczyk', 'password': 'admin', 'id': 1}
+]

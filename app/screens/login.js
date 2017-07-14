@@ -10,12 +10,18 @@ import {
 
 import Feed from './feed'
 import styles from './styles'
+import { loginValidation } from '../lib/validation'
 
 class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {userName: '', password: ''}
   }
+
+  login = (username, password) => { loginValidation(username, password) ? this.feedNavigate() : this.badLogin() }
+  feedNavigate = () => { this.props.navigation.navigate('Feed') }
+  badLogin = () => { alert('Bad Login') }
+
   render () {
     return (
       <KeyboardAvoidingView style={styles.loginContainer} behavior='padding'>
@@ -27,14 +33,19 @@ class Login extends Component {
           onChangeText={(text) => this.setState({userName: text})}
           value={this.state.userName}
           autoFocus={true}
+          autoCorrect={false}
+          autoCapitalize='none'
           />
         <TextInput
           style={styles.loginTextField}
           onChangeText={(text) => this.setState({password: text})}
           value={this.state.password}
+          autoCorrect={false}
+          autoCapitalize='none'
+          secureTextEntry={true}
           />
         <Button
-          onPress={() => this.props.navigation.navigate('Feed')}
+          onPress={() => this.login(this.state.userName, this.state.password)}
           title='Login'
           />
         <Button
