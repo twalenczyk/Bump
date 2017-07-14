@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 
   profilePictureContainer: {
     flex: 3,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0066ff'
   },
@@ -72,6 +72,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'skyblue'
+  },
+  profileName: {
+    fontSize: 30,
+    color: 'white'
   },
 
   /** Post Styles **/

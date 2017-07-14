@@ -15,7 +15,6 @@ import SignUp from '../screens/sign-up'
 const FeedTabs = TabNavigator({
   Feed: {
     screen: Feed,
-    path: 'feed/:user',
     navigationOptions: {
       title: 'Feed'
     }
@@ -28,6 +27,7 @@ const FeedTabs = TabNavigator({
   },
   Profile: {
     screen: Profile,
+    path: 'profile/:user',
     navigationOptions: {
       title: 'Profile'
     }
@@ -40,7 +40,8 @@ const MainNavigator = StackNavigator({
     screen: Login,
   },
   Feed: {
-    screen: FeedTabs
+    screen: FeedTabs,
+    path: 'feed/:user'
   },
   Post: {
     screen: Post,
