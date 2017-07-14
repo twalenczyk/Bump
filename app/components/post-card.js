@@ -11,7 +11,7 @@ import PostSubstance from './post-substance'
 class PostCard extends Component {
   render () {
     return (
-      <TouchableHighlight onPress={this.props.onPress} underlayColor='white'>
+      <TouchableHighlight onPress={this.props.onPress} underlayColor='grey'>
         <View style={styles.post}>
           <PostSubstance post={this.props.post} />
         </View>

@@ -7,13 +7,15 @@ const styles = StyleSheet.create({
 
   header: {
     height: 35,
+    padding: 5,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'grey',
   },
   headerLogo: {
-    fontSize: 20
+    fontSize: 20,
+    color: 'white'
   },
 
   /** Post Styles **/
@@ -22,28 +24,28 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     borderColor: '#2a4944',
-    borderWidth: 1,
-    backgroundColor: '#d2f7f1'
+    margin: 5,
   },
   postHeader: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: 'powderblue'
+    backgroundColor: 'orange',
+    padding: 2
   },
   postBody: {
     flex: 3,
-    backgroundColor: 'skyblue'
+    backgroundColor: 'white'
   },
   profilePicturePlaceholder: {
     width: 20,
     flexDirection: 'row',
     justifyContent: 'center',
-    backgroundColor: 'white'
+    backgroundColor: 'orange'
   },
   profilePicture: {
     width: 20,
     borderRadius: 10,
-    backgroundColor: 'red'
+    backgroundColor: 'white'
   },
   postHeaderRemainder: {
     flex: 1,

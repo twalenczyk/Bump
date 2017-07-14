@@ -27,13 +27,12 @@ class Feed extends Component {
     return (
       <View style={styles.container}>
         <AppHeader>
-          <Button
-            onPress={() => this.props.navigation.navigate('New Post')}
-            title='New Post'
-            />
+          <TouchableHighlight style={{marginRight: 5}} onPress={this.postNavigate} underlayColor='grey'>
+            <Text style={{color: 'orange', fontSize: 20}}>+</Text>
+          </TouchableHighlight>
+
         </AppHeader>
         <View>
-          <Text style={{color: 'white'}}> Hey user {this.state.user.name}!</Text>
           <ScrollView>
             {
               posts.map((item, index) => (

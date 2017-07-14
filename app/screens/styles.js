@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: 'grey'
+    backgroundColor: 'lightgrey'
   },
   welcome: {
     fontSize: 20,
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 
   loginContainer: {
     flex: 1,
-    backgroundColor: 'grey',
+    backgroundColor: 'lightgrey',
     justifyContent: 'center',
     alignItems: 'center'
   },
