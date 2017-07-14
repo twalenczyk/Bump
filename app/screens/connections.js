@@ -8,6 +8,7 @@ import {
 
 import styles from './styles'
 import AppHeader from '../components/app-header'
+import ConnectionCard from '../components/connection-card'
 
 class Connections extends Component {
   messageNavigate = (connection) => {
@@ -39,11 +40,7 @@ class Connections extends Component {
           <ScrollView>
             {
               this.state.names.map((item, index) => (
-                <TouchableHighlight key={item.id} onPress={this.messageNavigate} underlayColor="white">
-                  <View style={styles.item}>
-                    <Text>{item.name}</Text>
-                  </View>
-                </TouchableHighlight>
+                <ConnectionCard key={item.id} connection={item} onPress={this.messageNavigate} />
               ))
              }
           </ScrollView>

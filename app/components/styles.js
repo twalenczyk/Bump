@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
 
-  /** App Header Styles **/
+  /** Post Styles **/
 
   post: {
     flex: 1,
@@ -56,7 +56,20 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     backgroundColor: 'white'
-  }
+  },
+
+  /** Connection Styles **/
+
+  item: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: 30,
+      margin: 2,
+      borderColor: '#2a4944',
+      borderWidth: 1,
+      backgroundColor: '#d2f7f1'
+   }
 })
 
 export default styles
