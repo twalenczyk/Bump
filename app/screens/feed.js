@@ -11,7 +11,7 @@ import styles from './styles'
 import { posts } from '../config/data'
 import { getUser } from '../lib/pulls'
 import AppHeader from '../components/app-header'
-import PostCard from '../components/post-card'
+import PostCardTouchable from '../components/post-card-touchable'
 
 class Feed extends Component {
   constructor(props) {
@@ -23,11 +23,16 @@ class Feed extends Component {
     this.props.navigation.navigate('Post', post)
   }
 
+  newPostNavigate = () => {
+    this.props.navigation.navigate('New Post')
+  }
+
   render () {
     return (
       <View style={styles.container}>
         <AppHeader>
-          <TouchableHighlight style={{marginRight: 5}} onPress={this.postNavigate} underlayColor='grey'>
+
+          <TouchableHighlight style={{marginRight: 5}} onPress={this.newPostNavigate} underlayColor='grey'>
             <Text style={{color: 'orange', fontSize: 20}}>+</Text>
           </TouchableHighlight>
 
@@ -36,7 +41,7 @@ class Feed extends Component {
           <ScrollView>
             {
               posts.map((item, index) => (
-                <PostCard key={item.id} onPress={this.postNavigate} post={item} />
+                <PostCardTouchable key={item.id} onPress={this.postNavigate} post={item} />
               ))
             }
           </ScrollView>

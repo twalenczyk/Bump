@@ -7,15 +7,18 @@ import {
 import styles from './styles'
 import { posts } from '../config/data'
 import AppHeader from '../components/app-header'
-import PostSubstance from '../components/post-substance'
+import PostCard from '../components/post-card'
 
 class Post extends Component {
   render () {
     return (
       <View style={styles.container}>
         <AppHeader />
-        <View style={styles.postContainer}>
-          <PostSubstance post={posts[0]}/>
+        <View style={styles.container}>
+          <View style={styles.postContainer}>
+            <PostCard post={posts[0]}/>
+          </View>
+          <View style={styles.postContainer2} />
         </View>
       </View>
     )

@@ -113,10 +113,9 @@ const styles = StyleSheet.create({
   /** Post Styles **/
 
   postContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#d2f7f1'
-  },
+    flex: 1
+  }
+
 })
 
 export default styles
