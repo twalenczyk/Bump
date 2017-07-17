@@ -20,7 +20,7 @@ class Feed extends Component {
   }
 
   postNavigate = (post) => {
-    this.props.navigation.navigate('Post', post)
+    this.props.navigation.navigate('Post', {'post': post})
   }
 
   newPostNavigate = () => {
@@ -41,7 +41,7 @@ class Feed extends Component {
           <ScrollView>
             {
               posts.map((item, index) => (
-                <PostCardTouchable key={item.id} onPress={this.postNavigate} post={item} />
+                <PostCardTouchable key={item.id} onPress={() => this.postNavigate(item)} post={item} />
               ))
             }
           </ScrollView>
