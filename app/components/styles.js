@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   /** Post Styles **/
 
   post: {
+    flex: 1,
     flexDirection: 'column',
     margin: 5,
   },
@@ -31,9 +32,7 @@ const styles = StyleSheet.create({
     padding: 2
   },
   postBody: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    padding: 10,
     backgroundColor: 'red',
   },
   profilePicturePlaceholder: {
@@ -51,8 +50,8 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 5
   },
-  contentContainer: {
-    margin: 10,
+  postFooter: {
+    marginBottom: 0,
     backgroundColor: 'white'
   },
 

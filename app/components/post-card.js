@@ -26,11 +26,11 @@ class PostCard extends Component {
         </View>
 
         <View style={styles.postBody}>
-          <View style={styles.contentContainer}>
-            <Text>{this.props.post.content}</Text>
+          <Text>{this.props.post.content}</Text>
 
-          </View>
-          <Text>Comment</Text> 
+        </View>
+        <View style={styles.postFooter}>
+          <Text>Comment</Text>
         </View>
       </View>
     )

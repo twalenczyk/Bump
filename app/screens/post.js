@@ -14,12 +14,7 @@ class Post extends Component {
     return (
       <View style={styles.container}>
         <AppHeader />
-        <View style={styles.container}>
-          <View style={styles.postContainer}>
-            <PostCard post={this.props.navigation.state.params.post}/>
-          </View>
-          <View style={styles.postContainer2} />
-        </View>
+        <PostCard post={this.props.navigation.state.params.post}/>
       </View>
     )
   }
