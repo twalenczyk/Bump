@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import {
-  Text,
-  TextInput,
-  View,
-  Button,
-  KeyboardAvoidingView
+    Text,
+    TextInput,
+    View,
+    Button,
+    KeyboardAvoidingView
 } from 'react-native'
 
 
