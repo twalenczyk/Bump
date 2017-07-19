@@ -13,67 +13,66 @@ import SignUp from '../screens/sign-up'
 
 // Registers a TabNavigator for the main portion of the app
 const FeedTabs = TabNavigator({
-  Feed: {
-    screen: Feed,
-    navigationOptions: {
-      title: 'Feed'
+    Feed: {
+        screen: Feed,
+        navigationOptions: {
+            title: 'Feed'
+        }
+    },
+    'QR Generator': {
+        screen: QrGenerator,
+        navigationOptions: {
+            title: 'QR'
+        }
+    },
+    Profile: {
+        screen: Profile,
+        path: 'profile/:user',
+        navigationOptions: {
+            title: 'Profile'
+        }
     }
-  },
-  'QR Generator': {
-    screen: QrGenerator,
-    navigationOptions: {
-      title: 'QR'
-    }
-  },
-  Profile: {
-    screen: Profile,
-    path: 'profile/:user',
-    navigationOptions: {
-      title: 'Profile'
-    }
-  }
 })
 
 // Registers a StackNavigator for overall app navigation
 const MainNavigator = StackNavigator({
-  Login: {
-    screen: Login,
-  },
-  Feed: {
-    screen: FeedTabs,
-    path: 'feed/:user'
-  },
-  Post: {
-    screen: Post,
-    navigationOptions: {
-      title: 'Post'
+    Login: {
+        screen: Login,
+    },
+    Feed: {
+        screen: FeedTabs,
+        path: 'feed/:user'
+    },
+    Post: {
+        screen: Post,
+        navigationOptions: {
+        title: 'Post'
+        }
+    },
+    'New Post': {
+        screen: NewPost,
+        navigationOptions: {
+        title: 'New Post'
+        }
+    },
+    'Sign Up': {
+        screen: SignUp,
+        navigationOptions: {
+        title: 'Sign Up'
+        }
+    },
+    Connections: {
+        screen: Connections,
+        navigationOptions: {
+        title: 'Connections'
+        }
+    },
+    'Direct Message': {
+        screen: DirectMessage,
+        navigationOptions: {
+        title: 'Direct Message'
+        }
     }
-  },
-  'New Post': {
-    screen: NewPost,
-    navigationOptions: {
-      title: 'New Post'
-    }
-  },
-  'Sign Up': {
-    screen: SignUp,
-    navigationOptions: {
-      title: 'Sign Up'
-    }
-  },
-  Connections: {
-    screen: Connections,
-    navigationOptions: {
-      title: 'Connections'
-    }
-  },
-  'Direct Message': {
-    screen: DirectMessage,
-    navigationOptions: {
-      title: 'Direct Message'
-    }
-  }
-
 })
 
 export default MainNavigator
