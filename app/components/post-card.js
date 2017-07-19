@@ -30,7 +30,7 @@ class PostCard extends Component {
 
         </View>
         <View style={styles.postFooter}>
-          <Text>Comment</Text>
+          {this.props.children}
         </View>
       </View>
     )
