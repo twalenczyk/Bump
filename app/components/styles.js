@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
   /** Post Styles **/
 
   post: {
-    flex: 1,
     flexDirection: 'column',
     margin: 5,
   },
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
     padding: 2
   },
   postBody: {
-    flex: 3,
+    flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: 'red',
