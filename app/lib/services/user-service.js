@@ -1,6 +1,6 @@
 /** Added by Taylor Walenczyk 7/19/17 **/
 
-export const SignUp = (userName, password, email, firstName, lastName) => {
+export const CreateUser = (userName, password, email, firstName, lastName) => {
     // POST method
     // Login not required
     // Required params: userName password email firstName lastName
