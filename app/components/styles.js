@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   postBody: {
     padding: 10,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
   },
   profilePicturePlaceholder: {
     width: 20,
