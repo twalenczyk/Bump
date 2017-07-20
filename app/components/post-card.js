@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {
     Text,
-    View
+    View,
+    TouchableHighlight
 } from 'react-native'
 
 import styles from './styles'
@@ -21,7 +22,9 @@ class PostCard extends Component {
                     </View>
 
                     <View style={styles.cardHeaderRemainder}>
-                        <Text>{this.state.name}</Text>
+                        <TouchableHighlight onPress={this.props.profileNav} underlayColor='orange'>
+                            <Text>{this.state.name}</Text>
+                        </TouchableHighlight>
                     </View>
                 </View>
 

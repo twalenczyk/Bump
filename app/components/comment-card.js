@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {
     Text,
     TextInput,
-    View
+    View,
+    TouchableHighlight
 } from 'react-native'
 
 import styles from './styles'
@@ -22,7 +23,9 @@ class CommentCard extends Component {
                     </View>
 
                     <View style={styles.cardHeaderRemainder}>
-                        <Text>{this.state.name}</Text>
+                        <TouchableHighlight onPress={this.props.profileNav} underlayColor='orange'>
+                            <Text>{this.state.name}</Text>
+                        </TouchableHighlight>
                     </View>
                 </View>
 

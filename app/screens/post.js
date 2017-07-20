@@ -17,7 +17,8 @@ class Post extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            comments: comments
+            comments: comments,
+            post: this.props.navigation.state.params.post
         }
     }
     comment = () => {
@@ -25,11 +26,15 @@ class Post extends Component {
         this.setState({comments: newList})
     }
 
+    otherProfileNavigate = (userId) => {
+        this.props.navigation.navigate('Profile', {'user': userId})
+    }
+
     render () {
         return (
             <View style={styles.container}>
                 <AppHeader />
-                <PostCard post={this.props.navigation.state.params.post}>
+                <PostCard post={this.props.navigation.state.params.post} profileNav={() => this.otherProfileNavigate(this.state.post.id)}>
                     <TouchableHighlight onPress={this.comment} underlayColor='white'>
                         <Text> Comment </Text>
                     </TouchableHighlight>
@@ -38,7 +43,7 @@ class Post extends Component {
                     <ScrollView>
                         {
                             this.state.comments.map((item, index) => (
-                                <CommentCard key={item.id} comment={item} />
+                                <CommentCard key={item.id} comment={item} profileNav={() => this.otherProfileNavigate(item.id)} />
                             ))
                         }
                     </ScrollView>

@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import {
     Text,
-    View,
-    Button,
-    ScrollView,
-    TouchableHighlight
+    View
 } from 'react-native'
 
 import styles from './styles'
@@ -18,7 +15,7 @@ class Profile extends Component {
         super(props)
         this.state = {user: this.props.navigation.state.params.user}
     }
-    
+
     postNavigate = (post) => {
         this.props.navigation.navigate('Post', {'post': post})
     }
