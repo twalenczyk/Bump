@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     cardFooter: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        padding: 2,
+        padding: 5,
         marginBottom: 0,
         backgroundColor: 'white'
     },
