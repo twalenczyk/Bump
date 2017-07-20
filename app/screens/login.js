@@ -17,7 +17,7 @@ import { getUser } from '../lib/pulls'
 class Login extends Component {
     constructor(props) {
         super(props)
-        this.state = {userName: '', password: '', snagUser: getUser}
+        this.state = {userName: '', password: ''}
     }
 
 
@@ -62,9 +62,9 @@ class Login extends Component {
 
         // snag the local user data then set the states accordingly
         this.getLocalUser().then((result) => {
-            let localUser = result !== undefined ? this.state.snagUser(result) : '' //@BUG this does not work at the moment. Will rework when Zane gets the server up.
+            let localUser = result !== undefined ? getUser(result) : '' //@BUG this does not work at the moment. Will rework when Zane gets the server up.
             if( localUser ) { // if local user exists, set the userName and password
-                this.setState({userName: localUser.userName})
+                this.setState({userName: localUser.name})
                 this.setState({password: localUser.password})
             }
         })
