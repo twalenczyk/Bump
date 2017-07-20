@@ -18,20 +18,44 @@ const styles = StyleSheet.create({
         color: 'white'
     },
 
-    /** Post Styles **/
+    /** Post Card Styles **/
 
     post: {
-        flex: 1,
         flexDirection: 'column',
         margin: 5,
     },
-    postHeader: {
+
+    /** Connection Card Styles **/
+
+    item: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 30,
+        margin: 2,
+        borderColor: '#2a4944',
+        borderWidth: 1,
+        backgroundColor: '#d2f7f1'
+    },
+
+    /** Comment Card Styles **/
+
+    comment: {
+        flexDirection: 'column',
+        marginTop: 5,
+        marginRight: 10,
+        marginLeft: 10,
+    },
+
+    /** Generic Card Styles **/
+
+    cardHeader: {
         height: 20,
         flexDirection: 'row',
         backgroundColor: 'orange',
         padding: 2
     },
-    postBody: {
+    cardBody: {
         padding: 10,
         backgroundColor: 'white',
     },
@@ -46,27 +70,18 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: 'white'
     },
-    postHeaderRemainder: {
+    cardHeaderRemainder: {
         flex: 1,
         marginLeft: 5
     },
-    postFooter: {
+    cardFooter: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        padding: 2,
         marginBottom: 0,
         backgroundColor: 'white'
     },
 
-    /** Connection Styles **/
-
-    item: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 30,
-        margin: 2,
-        borderColor: '#2a4944',
-        borderWidth: 1,
-        backgroundColor: '#d2f7f1'
-    }
 })
 
 export default styles

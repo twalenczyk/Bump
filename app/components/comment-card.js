@@ -6,15 +6,15 @@ import {
 
 import styles from './styles'
 
-class PostCard extends Component {
+class CommentCard extends Component {
     constructor(props) {
         super(props)
-        this.state = {name: this.props.post.name, content: this.props.post.content}
+        this.state = {name: this.props.comment.name, content: this.props.comment.content}
     }
 
     render () {
         return (
-            <View style={styles.post}>
+            <View style={styles.comment}>
                 <View style={styles.cardHeader}>
                     <View style={styles.profilePicturePlaceholder}>
                         <View style={styles.profilePicture} />
@@ -30,7 +30,7 @@ class PostCard extends Component {
                 </View>
 
                 <View style={styles.cardFooter}>
-                    {this.props.children}
+                    <Text>Like</Text>
                 </View>
             </View>
         )
@@ -39,4 +39,4 @@ class PostCard extends Component {
 
 
 
-export default PostCard
+export default CommentCard

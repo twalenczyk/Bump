@@ -3,6 +3,8 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
 
+    // NOTE styles for components like post card are contained in the components folder. Don't style them here unless it's page specific stuff.
+
     /** General Styles **/
 
     container: {
@@ -86,8 +88,6 @@ const styles = StyleSheet.create({
 
     /** Feed Styles **/
 
-        // NOTE styles for components like post card are contained in the components folder. Don't style them here.
-
     /** Profile Styles **/
 
     profilePictureContainer: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     },
     profileFeedContainer: {
         flex: 5,
-        backgroundColor: '#F5FCFF'
+        backgroundColor: 'lightgrey'
     },
     profileDetailsContainer: {
         flex: 1,
@@ -114,9 +114,6 @@ const styles = StyleSheet.create({
 
     /** Post Styles **/
 
-    postContainer: {
-        flex: 1
-    },
 
     /** Sign Up Styles **/
 

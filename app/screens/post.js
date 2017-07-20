@@ -1,18 +1,29 @@
 import React, { Component } from 'react'
 import {
+    ScrollView,
     Text,
-    View,
-    TouchableHighlight
+    TouchableHighlight,
+    View
 } from 'react-native'
 
 import styles from './styles'
 import { posts } from '../config/data'
 import AppHeader from '../components/app-header'
 import PostCard from '../components/post-card'
+import CommentCard from '../components/comment-card'
 
 class Post extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            comments: [
+                {id: 0, name: 'Bill', content: 'This sucks!'},
+                {id: 1, name: 'Stan', content: 'I know, right?'}
+            ]
+        }
+    }
     comment = () => {
-    alert('This will be a comment')
+        alert('This will be a comment')
     }
 
     render () {
@@ -24,6 +35,15 @@ class Post extends Component {
                         <Text> Comment </Text>
                     </TouchableHighlight>
                 </PostCard>
+                <View style={styles.container}>
+                    <ScrollView>
+                        {
+                            this.state.comments.map((item, index) => (
+                                <CommentCard key={item.id} comment={item} />
+                            ))
+                        }
+                    </ScrollView>
+                </View>
             </View>
         )
     }
