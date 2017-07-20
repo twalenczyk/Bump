@@ -11,16 +11,16 @@ import styles from './styles'
 import { posts } from '../config/data'
 import { getUser } from '../lib/pulls'
 import AppHeader from '../components/app-header'
-import PostCard from '../components/post-card'
+import PostCardTouchable from '../components/post-card-touchable'
 
 class Profile extends Component {
     constructor(props) {
-    super(props)
-    this.state = { user: getUser(this.props.navigation.state.params.user) }
+        super(props)
+        this.state = { user: getUser(this.props.navigation.state.params.user) }
     }
 
     postNavigate = (post) => {
-    this.props.navigation.navigate('Post', post)
+        this.props.navigation.navigate('Post', {'post': post})
     }
 
     render () {
@@ -40,7 +40,7 @@ class Profile extends Component {
                     <ScrollView>
                         {
                             posts.map((item, index) => (
-                                <PostCard key={item.id} onPress={this.postNavigate} post={item} />
+                                <PostCardTouchable key={item.id} onPress={() => this.postNavigate(item)} post={item} />
                             ))
                         }
                     </ScrollView>

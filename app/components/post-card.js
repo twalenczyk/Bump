@@ -8,6 +8,11 @@ import {
 import styles from './styles'
 
 class PostCard extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {name: this.props.post.name, content: this.props.post.content}
+    }
+
     render () {
         return (
             <View style={styles.post}>
@@ -17,12 +22,12 @@ class PostCard extends Component {
                     </View>
 
                     <View style={styles.postHeaderRemainder}>
-                        <Text>{this.props.post.name}</Text>
+                        <Text>{this.state.name}</Text>
                     </View>
                 </View>
 
                 <View style={styles.postBody}>
-                    <Text>{this.props.post.content}</Text>
+                    <Text>{this.state.content}</Text>
                 </View>
 
                 <View style={styles.postFooter}>
