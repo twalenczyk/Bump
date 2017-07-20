@@ -4,28 +4,71 @@ import {
     TextInput,
     View,
     Button,
-    KeyboardAvoidingView
+    KeyboardAvoidingView,
+    AsyncStorage
 } from 'react-native'
 
 
 import Feed from './feed'
 import styles from './styles'
 import { loginValidation } from '../lib/validation'
+import { getUser } from '../lib/pulls'
 
 class Login extends Component {
     constructor(props) {
         super(props)
-        this.state = {userName: '', password: ''}
+        this.state = {userName: '', password: '', snagUser: getUser}
     }
+
+
+    /** Local Storage functions **/
+
+    storeUserLocally = async (userId) => {
+        try {
+            await AsyncStorage.setItem('currentUser', userId.toString())
+            return 'User stored locally'
+        } catch (error) {
+            // do nothing
+        }
+
+    }
+
+    getLocalUser = async () => {
+        try {
+            return await AsyncStorage.getItem('currentUser') // returns the locally stored id
+        } catch (error) {
+            // do nothing
+        }
+    }
+
+    /** local nav and login functions **/
+
+    feedNavigate = (userId) => {
+        this.storeUserLocally(userId).then((result) => {
+            this.props.navigation.navigate('Feed', { user: userId })
+        })
+    }
+
+    badLogin = () => { alert('Bad Login') }
 
     login = (username, password) => {
         let user = loginValidation(username, password)
         user.exists ? this.feedNavigate(user.user.id) : this.badLogin()
     }
 
-    feedNavigate = (userId) => { this.props.navigation.navigate('Feed', { user: userId }) }
+    /** Mounting **/
 
-    badLogin = () => { alert('Bad Login') }
+    componentWillMount() {
+
+        // snag the local user data then set the states accordingly
+        this.getLocalUser().then((result) => {
+            let localUser = result !== undefined ? this.state.snagUser(result) : '' //@BUG this does not work at the moment. Will rework when Zane gets the server up.
+            if( localUser ) { // if local user exists, set the userName and password
+                this.setState({userName: localUser.userName})
+                this.setState({password: localUser.password})
+            }
+        })
+    }
 
     render () {
         return (
