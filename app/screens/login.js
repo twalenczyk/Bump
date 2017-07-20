@@ -23,7 +23,7 @@ class Login extends Component {
         user.exists ? this.feedNavigate(user.user.id) : this.badLogin()
     }
 
-    feedNavigate = (userId) => { this.props.navigation.navigate('Feed', { user: userId}) }
+    feedNavigate = (userId) => { this.props.navigation.navigate('Feed', { user: userId }) }
 
     badLogin = () => { alert('Bad Login') }
 

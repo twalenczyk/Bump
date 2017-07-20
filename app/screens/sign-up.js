@@ -8,11 +8,35 @@ import {
 } from 'react-native'
 
 import styles from './styles'
+import { CreateUser } from '../lib/services/user-service'
 
 class SignUp extends Component {
     constructor(props) {
         super(props)
         this.state = {userName: '', password: '', email: '', firstName: '', lastName: ''}
+    }
+
+    signUp = () => {
+        // NOTE SignUp will return a promise once its hooked up
+        // validate unique userName and email before passing on
+        // validate password
+        // validate all fields exist
+        if(this.state.userName && this.state.password && this.state.email && this.state.firstName && this.state.lastName) { // Checks to make sure all fields exist and aren't empty
+            if(this.state.passwordValid) {
+                CreateUser(this.state.userName, this.state.password, this.state.email, this.state.firstName, this.state.lastName)
+                this.props.navigation.navigate('Feed', { user: 1 }) // Will need to occur asynchronously
+            } else {
+                alert('Bad password.')
+            }
+        } else {
+            alert('Bad values.')
+        }
+    }
+
+    validatePassword = (password) => {
+        // Check for the proper pattern for the password
+        // set a flag based on findings
+        this.setState({passwordValid: true})
     }
 
     render () {
@@ -38,6 +62,7 @@ class SignUp extends Component {
                         style={styles.loginTextField}
                         onChangeText={(text) => this.setState({password: text})}
                         value={this.state.password}
+                        onBlur={() => this.validatePassword(this.state.password)}
                         autoCorrect={false}
                         autoCapitalize='none'
                         secureTextEntry={true}
@@ -50,6 +75,7 @@ class SignUp extends Component {
                         autoCorrect={false}
                         autoCapitalize='none'
                         placeholder='Email'
+                        KeyboardType='email-address'
                         />
                     <TextInput
                         style={styles.loginTextField}
@@ -73,7 +99,7 @@ class SignUp extends Component {
                     <View style={styles.signupButton}>
                         <Button
                             style={{flex:1}}
-                            onPress={() => this.props.navigation.navigate('Sign Up')}
+                            onPress={() => this.signUp()}
                             title='Sign Up'
                             color='white'
                             />
