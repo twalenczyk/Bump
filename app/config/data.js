@@ -26,8 +26,8 @@ export const posts = [
 ]
 
 export const users = [
-    {'name': 'Taylor Walenczyk', 'password': 'admin', 'id': 0},
-    {'name': 'Bill Burr', 'password': 'Burr', 'id': 1}
+    {name: 'Taylor Walenczyk', password: 'admin', id: 0},
+    {name: 'Bill Burr', password: 'Burr', id: 1}
 ]
 
 export const comments = [
