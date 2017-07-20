@@ -11,25 +11,33 @@ import AppHeader from '../components/app-header'
 import ConnectionCard from '../components/connection-card'
 
 class Connections extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            user: this.props.navigation.state.params.user,
+            names: [
+                {'name': 'Ben', 'id': 1},
+                {'name': 'Susan', 'id': 2},
+                {'name': 'Robert', 'id': 3},
+                {'name': 'Mary', 'id': 4},
+                {'name': 'Daniel', 'id': 5},
+                {'name': 'Laura', 'id': 6},
+                {'name': 'John', 'id': 7},
+                {'name': 'Debra', 'id': 8},
+                {'name': 'Aron', 'id': 9},
+                {'name': 'Ann', 'id': 10},
+                {'name': 'Steve', 'id': 11},
+                {'name': 'Olivia', 'id': 12}
+            ]
+        }
+    }
+
     messageNavigate = (connection) => {
         this.props.navigation.navigate('Direct Message', { ...connection })
     }
 
-    state = {
-        names: [
-            {'name': 'Ben', 'id': 1},
-            {'name': 'Susan', 'id': 2},
-            {'name': 'Robert', 'id': 3},
-            {'name': 'Mary', 'id': 4},
-            {'name': 'Daniel', 'id': 5},
-            {'name': 'Laura', 'id': 6},
-            {'name': 'John', 'id': 7},
-            {'name': 'Debra', 'id': 8},
-            {'name': 'Aron', 'id': 9},
-            {'name': 'Ann', 'id': 10},
-            {'name': 'Steve', 'id': 11},
-            {'name': 'Olivia', 'id': 12}
-        ]
+    profileNavigate = (connection) => {
+        this.props.navigation.navigate('Profile', {'user': 1})
     }
 
     render () {
@@ -40,7 +48,7 @@ class Connections extends Component {
                     <ScrollView>
                         {
                             this.state.names.map((item, index) => (
-                                <ConnectionCard key={item.id} connection={item} onPress={() => this.messageNavigate(item)} />
+                                <ConnectionCard key={item.id} connection={item} onPress={() => this.profileNavigate(item)} />
                             ))
                         }
                     </ScrollView>

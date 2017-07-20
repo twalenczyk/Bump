@@ -27,6 +27,10 @@ class Feed extends Component {
         this.props.navigation.navigate('New Post')
     }
 
+    otherProfileNavigate = (userId) => {
+        this.props.navigation.navigate('Profile', {'user': userId})
+    }
+
     render () {
         return (
             <View style={styles.container}>
@@ -39,7 +43,7 @@ class Feed extends Component {
                     <ScrollView>
                         {
                             posts.map((item, index) => (
-                                <PostCardTouchable key={item.id} onPress={() => this.postNavigate(item)} post={item} />
+                                <PostCardTouchable key={item.id} onPress={() => this.postNavigate(item)} post={item} profileNav={() => this.otherProfileNavigate(item.id)}/>
                             ))
                         }
                     </ScrollView>

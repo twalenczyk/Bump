@@ -39,16 +39,6 @@ const styles = StyleSheet.create({
 
     /** Connection Card Styles **/
 
-    item: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 30,
-        margin: 2,
-        borderColor: '#2a4944',
-        borderWidth: 1,
-        backgroundColor: '#d2f7f1'
-    },
     connection: {
         height: 40,
         flexDirection: 'row',
@@ -56,6 +46,7 @@ const styles = StyleSheet.create({
     },
     connectionProfilePicContainer: {
         width: 40,
+        padding: 2,
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: 'orange'
