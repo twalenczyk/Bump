@@ -46,31 +46,39 @@ const MainNavigator = StackNavigator({
     Post: {
         screen: Post,
         navigationOptions: {
-        title: 'Post'
+            title: 'Post'
         }
     },
     'New Post': {
         screen: NewPost,
         navigationOptions: {
-        title: 'New Post'
+            title: 'New Post'
         }
     },
     'Sign Up': {
         screen: SignUp,
         navigationOptions: {
-        title: 'Sign Up'
+            title: 'Sign Up'
         }
     },
     Connections: {
         screen: Connections,
+        path: 'connections/:user',
         navigationOptions: {
-        title: 'Connections'
+            title: 'Connections'
         }
     },
     'Direct Message': {
         screen: DirectMessage,
         navigationOptions: {
-        title: 'Direct Message'
+            title: 'Direct Message'
+        }
+    },
+    Profile: {
+        screen: Profile,
+        path: 'profile/:user',
+        navigationOptions: {
+            title: 'Profile'
         }
     }
 })
