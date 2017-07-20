@@ -6,14 +6,13 @@ import {
 } from 'react-native'
 
 import styles from './styles'
-import ConnectionSubstance from './connection-substance'
 
 class ConnectionCard extends Component {
     render () {
         return (
             <TouchableHighlight onPress={this.props.onPress} underlayColor="white">
                 <View style={styles.item}>
-                    <ConnectionSubstance connection={this.props.connection} />
+                    <Text>{this.props.connection.name}</Text>
                 </View>
             </TouchableHighlight>
         )
