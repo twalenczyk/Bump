@@ -9,13 +9,25 @@ const styles = StyleSheet.create({
         height: 35,
         padding: 5,
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: 'grey',
     },
     headerLogo: {
         fontSize: 20,
         color: 'white'
+    },
+    headerLeftContainer: {
+        flex: 1,
+    },
+    headerCenterContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center'
+    },
+    headerRightContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
     },
 
     /** Post Card Styles **/

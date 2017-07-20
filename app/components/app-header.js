@@ -11,13 +11,13 @@ class AppHeader extends Component {
     render () {
         return (
             <View style={styles.header}>
-                <View />
-                <View>
+                <View style={styles.headerLeftContainer} />
+                <View style={styles.headerCenterContainer}>
                     <Text style={styles.headerLogo}>
                     Bump
                     </Text>
                 </View>
-                <View>
+                <View style={styles.headerRightContainer}>
                     {this.props.children}
                 </View>
             </View>
