@@ -81,6 +81,11 @@ const styles = StyleSheet.create({
         marginBottom: 0,
         backgroundColor: 'white'
     },
+    textField: {
+        flex: 1,
+        fontSize: 14,
+        backgroundColor: 'white'
+    },
 
 })
 

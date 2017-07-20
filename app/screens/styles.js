@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'flex-end'
-        },
-        loginBumpText: {
+    },
+    loginBumpText: {
         fontSize: 50,
         color: 'orange'
     },

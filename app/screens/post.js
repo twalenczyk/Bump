@@ -17,13 +17,13 @@ class Post extends Component {
         super(props)
         this.state = {
             comments: [
-                {id: 0, name: 'Bill', content: 'This sucks!'},
-                {id: 1, name: 'Stan', content: 'I know, right?'}
+                {id: 0, name: 'Bill', content: 'This sucks!', editable: true},
+                {id: 1, name: 'Stan', content: 'I know, right?', editable: false}
             ]
         }
     }
     comment = () => {
-        alert('This will be a comment')
+
     }
 
     render () {

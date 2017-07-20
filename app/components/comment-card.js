@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
     Text,
+    TextInput,
     View
 } from 'react-native'
 
@@ -9,7 +10,7 @@ import styles from './styles'
 class CommentCard extends Component {
     constructor(props) {
         super(props)
-        this.state = {name: this.props.comment.name, content: this.props.comment.content}
+        this.state = {name: this.props.comment.name, content: this.props.comment.content, editable: this.props.comment.editable}
     }
 
     render () {
@@ -26,7 +27,13 @@ class CommentCard extends Component {
                 </View>
 
                 <View style={styles.cardBody}>
-                    <Text>{this.state.content}</Text>
+                    <TextInput
+                        style={styles.textField}
+                        onChangeText={(text) => this.setState({content: text})}
+                        value={this.state.content}
+                        multiline={true}
+                        editable={this.state.editable}
+                        />
                 </View>
 
                 <View style={styles.cardFooter}>
