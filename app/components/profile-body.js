@@ -26,7 +26,7 @@ class ProfileBody extends Component {
                 </View>
                 <View style={styles.profileDetailsContainer}>
                     <Button
-                        onPress={() => this.props.connectionNav}
+                        onPress={this.props.connectionNav}
                         title='Check your connections'
                         />
                 </View>
