@@ -29,3 +29,8 @@ export const users = [
     {'name': 'Taylor Walenczyk', 'password': 'admin', 'id': 1},
     {'name': 'Bill Burr', 'password': 'Burr', 'id': 0}
 ]
+
+export const comments = [
+    {id: 0, name: 'Bill', content: 'This sucks!', editable: true},
+    {id: 1, name: 'Stan', content: 'I know, right?', editable: false}
+]

@@ -33,6 +33,7 @@ class CommentCard extends Component {
                         value={this.state.content}
                         multiline={true}
                         editable={this.state.editable}
+                        placeholder='Write something...'
                         />
                 </View>
 

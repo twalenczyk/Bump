@@ -7,7 +7,8 @@ import {
 } from 'react-native'
 
 import styles from './styles'
-import { posts } from '../config/data'
+import { posts, comments } from '../config/data'
+import { addComment } from '../lib/manipulation'
 import AppHeader from '../components/app-header'
 import PostCard from '../components/post-card'
 import CommentCard from '../components/comment-card'
@@ -16,14 +17,12 @@ class Post extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            comments: [
-                {id: 0, name: 'Bill', content: 'This sucks!', editable: true},
-                {id: 1, name: 'Stan', content: 'I know, right?', editable: false}
-            ]
+            comments: comments
         }
     }
     comment = () => {
-
+        let newList = addComment({id: 3, name: 'Someone', content: '', editable: true})
+        this.setState({comments: newList})
     }
 
     render () {
