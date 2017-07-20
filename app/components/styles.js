@@ -37,6 +37,29 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: '#d2f7f1'
     },
+    connection: {
+        height: 40,
+        flexDirection: 'row',
+        margin: 5,
+    },
+    connectionProfilePicContainer: {
+        width: 40,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: 'orange'
+    },
+    connectionProfilePicPlaceholder: {
+        flex: 1,
+        borderRadius: 20,
+        backgroundColor: 'white'
+    },
+    connectionInfoContainer: {
+        flex: 4,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: 5,
+        backgroundColor: 'white',
+    },
 
     /** Comment Card Styles **/
 
@@ -85,6 +108,30 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 14,
         backgroundColor: 'white'
+    },
+
+    /** Profile Body styles **/
+
+    profilePictureContainer: {
+        flex: 3,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#0066ff'
+    },
+    profileFeedContainer: {
+        flex: 5,
+        backgroundColor: 'lightgrey'
+    },
+    profileDetailsContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'skyblue'
+    },
+    profileName: {
+        fontSize: 30,
+        color: 'white'
     },
 
 })
