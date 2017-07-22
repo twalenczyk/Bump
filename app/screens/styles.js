@@ -88,6 +88,34 @@ const styles = StyleSheet.create({
 
     /** Feed Styles **/
 
+    modalContent: {
+        height: 200,
+        backgroundColor: 'white',
+        padding: 22,
+        borderRadius: 4,
+        borderColor: 'black'
+    },
+    modalBody: {
+        flex: 3,
+    },
+    modalFooter: {
+        flex: 1,
+    },
+    button: {
+        backgroundColor: 'lightblue',
+        padding: 12,
+        margin: 16,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 4,
+        borderColor: 'red',
+    },
+    textField: {
+        flex: 1,
+        fontSize: 14,
+        backgroundColor: 'white'
+    },
+
     /** Profile Styles **/
 
     profilePictureContainer: {
