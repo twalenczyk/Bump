@@ -13,6 +13,7 @@ import Feed from './feed'
 import styles from './styles'
 import { loginValidation } from '../lib/validation'
 import { getUser } from '../lib/pulls'
+import { UserLogin } from '../lib/services/session-service'
 
 class Login extends Component {
     constructor(props) {
@@ -52,8 +53,11 @@ class Login extends Component {
     badLogin = () => { alert('Bad Login') }
 
     login = (username, password) => {
-        let user = loginValidation(username, password)
-        user.exists ? this.feedNavigate(user.user.id) : this.badLogin()
+        // let user = loginValidation(username, password)
+        // user.exists ? this.feedNavigate(user.user.id) : this.badLogin()
+        UserLogin(username, password).then((result) => {
+            alert(JSON.stringify(result))
+        })
     }
 
     /** Mounting **/
