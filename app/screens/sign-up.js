@@ -13,18 +13,26 @@ import { CreateUser } from '../lib/services/user-service'
 class SignUp extends Component {
     constructor(props) {
         super(props)
-        this.state = {userName: '', password: '', email: '', firstName: '', lastName: ''}
+        this.state = {userName: '', password: '', email: '', firstName: '', lastName: '', passwordValid: true}
     }
 
-    signUp = () => {
+    signUp = (u, p, e, f, l) => {
         // NOTE SignUp will return a promise once its hooked up
         // validate unique userName and email before passing on
         // validate password
         // validate all fields exist
-        if(this.state.userName && this.state.password && this.state.email && this.state.firstName && this.state.lastName) { // Checks to make sure all fields exist and aren't empty
+        if(u && p && e && f && l) { // Checks to make sure all fields exist and aren't empty
             if(this.state.passwordValid) {
-                CreateUser(this.state.userName, this.state.password, this.state.email, this.state.firstName, this.state.lastName)
-                this.props.navigation.navigate('Feed', { user: 1 }) // Will need to occur asynchronously
+                CreateUser(u, p, e, f, l).then((result) => {
+                    alert(JSON.stringify(result))
+                    // alert(l)
+                    // the cookie resides in result.headers.map['set-cookie']
+                    // save the cookie
+                    // route to the feed
+                    // let cookie = result.headers.map['set-cookie']
+
+                })
+                // this.props.navigation.navigate('Feed', { user: 1 }) // Will need to occur asynchronously
             } else {
                 alert('Bad password.')
             }
@@ -99,7 +107,7 @@ class SignUp extends Component {
                     <View style={styles.signupButton}>
                         <Button
                             style={{flex:1}}
-                            onPress={() => this.signUp()}
+                            onPress={() => this.signUp(this.state.userName, this.state.password, this.state.email, this.state.firstName, this.state.lastName)}
                             title='Sign Up'
                             color='white'
                             />
