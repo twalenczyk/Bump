@@ -1,7 +1,7 @@
 /** Added by Taylor Walenczyk 7/19/17 **/
 
 
-export async function CreateUser(userName, password, e, firstName, lastName){
+export async function CreateUser(userName, password, e, firstName, lastName) {
     // POST method
     // Login not required
     // Required params: userName password email firstName lastName
