@@ -13,7 +13,8 @@ export async function UserLogin(userName, password) {
                 password: password,
             })
         })
-        return response
+        let responseJSON = await response.json()
+        return responseJSON
     } catch (e) {
         return e
     }
