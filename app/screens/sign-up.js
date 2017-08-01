@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 
 import styles from './styles'
-import { CreateUser } from '../lib/services/user-service'
+import { CreateUser, dummyGet } from '../lib/services/user-service'
 
 class SignUp extends Component {
     constructor(props) {
