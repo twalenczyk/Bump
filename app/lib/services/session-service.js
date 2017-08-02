@@ -1,10 +1,23 @@
 /** Added by Taylor Walenczyk 7/19/17 **/
 
-export const Login = (userName, password) => {
+export async function UserLogin(userName, password) {
     // POST method
     // Login not required
     // Required params: userName password
-
+    try {
+        let response = await fetch('http://bump.zjcers.com/sessions', {
+            method: 'POST',
+            credentials: 'include',
+            body: JSON.stringify({
+                username: userName,
+                password: password,
+            })
+        })
+        let responseJSON = await response.json()
+        return responseJSON
+    } catch (e) {
+        return e
+    }
 }
 
 export const SignUp = (userName, password, email, firstName, lastName) => {
