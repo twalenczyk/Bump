@@ -56,7 +56,9 @@ class Login extends Component {
         // let user = loginValidation(username, password)
         // user.exists ? this.feedNavigate(user.user.id) : this.badLogin()
         UserLogin(username, password).then((result) => {
-            alert(JSON.stringify(result))
+            // alert(JSON.stringify(result))
+            let user = loginValidation(username, password)
+            this.feedNavigate(user.user.id)
         })
     }
 

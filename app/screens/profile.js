@@ -28,7 +28,7 @@ class Profile extends Component {
         return (
             <View style={styles.container}>
                 <AppHeader />
-                <ProfileBody userId={this.props.navigation.state.params.user} postNav={this.postNavigate} connectionNav={this.connectionNavigate}/>
+                <ProfileBody userId={this.state.user} postNav={this.postNavigate} connectionNav={this.connectionNavigate}/>
             </View>
         )
     }
