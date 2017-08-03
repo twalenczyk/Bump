@@ -8,7 +8,7 @@ export async function CreateUser(userName, password, email, firstName, lastName)
     // no need to import fetch\
     let myHeaders = new Headers();
 
-    let response = await fetch('http://bump.zjcers.com/users/', {
+    let response = await fetch('https://bump.zjcers.com/users/', {
         method: 'POST',
         credentials: 'include',
         body: JSON.stringify({
