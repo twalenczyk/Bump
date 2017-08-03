@@ -7,9 +7,11 @@ export async function CreateUser(userName, password, email, firstName, lastName)
     // NOTE email and userName should be globally unique. Validate before sending to backend.
     // no need to import fetch\
     let myHeaders = new Headers();
+    myHeaders.append('content-type', 'application/json');
 
     let response = await fetch('https://bump.zjcers.com/users/', {
         method: 'POST',
+        headers: myHeaders,
         credentials: 'include',
         body: JSON.stringify({
             username: userName,
