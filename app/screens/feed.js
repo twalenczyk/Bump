@@ -40,6 +40,7 @@ class Feed extends Component {
             this.setState({user: result})
         })
     }
+
     render () {
         return (
             <View style={styles.container}>

@@ -16,6 +16,32 @@ class SignUp extends Component {
         this.state = {userName: '', password: '', email: '', firstName: '', lastName: '', passwordValid: true}
     }
 
+    /** Local Storage functions **/
+
+    storeLocally = async (key, value) => {
+        try {
+            await AsyncStorage.setItem(key, value.toString())
+            return 'User stored locally'
+        } catch (error) {
+            // do nothing
+        }
+
+    }
+
+    getLocal = async (key) => {
+        try {
+            return await AsyncStorage.getItem(key) // returns the locally stored id
+        } catch (error) {
+            // do nothing
+        }
+    }
+
+    /** local nav and signup functions **/
+
+    feedNavigate = (id) => {
+        this.props.navigation.navigate('Feed', { userId: id })
+    }
+
     signUp = (u, p, e, f, l) => {
         // NOTE SignUp will return a promise once its hooked up
         // validate unique userName and email before passing on
@@ -24,13 +50,34 @@ class SignUp extends Component {
         if(u && p && e && f && l) { // Checks to make sure all fields exist and aren't empty
             if(this.state.passwordValid) {
                 CreateUser(u, p, e, f, l).then((result) => {
-                    alert(JSON.stringify(result))
-                    // alert(l)
-                    // the cookie resides in result.headers.map['set-cookie']
-                    // save the cookie
-                    // route to the feed
-                    // let cookie = result.headers.map['set-cookie']
+                    if(result.ok) {
+                        // alert(JSON.stringify(result))
+                        // alert(l)
+                        // the cookie resides in result.headers.map['set-cookie']
+                        // save the cookie
+                        // route to the feed
+                        // let cookie = result.headers.map['set-cookie']
+                        storeLocally('cookie', result.headers.get('Set-Cookie')).then((result) => {
+                            // do nothing
+                        })
 
+                        result.json().then((resultJson) => {
+                            let userId = resultJson.user.id
+                            storeLocally('currentUser', userId).then((result) => {
+                                this.feedNavigate(userId)
+                            })
+                        })
+                    } else if(result.status === 400){
+                        // Error handling\
+                        alert('This email is invalid.')
+                    }
+                    else if(result.status === 409){
+                        // Error handling\
+                        alert('This email is already in use or the username is in use.')
+                    }
+                    else {
+                        alert(result.status)
+                    }
                 })
                 // this.props.navigation.navigate('Feed', { user: 1 }) // Will need to occur asynchronously
             } else {
