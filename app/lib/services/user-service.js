@@ -6,8 +6,8 @@ export async function CreateUser(userName, password, email, firstName, lastName)
     // Required params: userName password email firstName lastName
     // NOTE email and userName should be globally unique. Validate before sending to backend.
     // no need to import fetch\
-    let myHeaders = new Headers();
-    myHeaders.append('content-type', 'application/json');
+    let myHeaders = new Headers()
+    myHeaders.append('content-type', 'application/json')
 
     let response = await fetch('https://bump.zjcers.com/users/', {
         method: 'POST',
@@ -28,10 +28,21 @@ export async function CreateUser(userName, password, email, firstName, lastName)
 
 }
 
-export const GetUsers = () => {
+export async function GetUsers(users, cookie) {
     // GET method
     // Login required
-    // Required params: ids of users
+    // Required params: array of users
+    let url = 'https://bump.zjcers.com/users/'+users.toString() // comma seperated list of users in the url
+    let myHeaders = new Headers()
+    myHeaders.append('content-type', 'application/json')
+    myHeaders.append('Set-Cookie', cookie)
+
+    let response = await fetch(url, {
+        method: 'POST',
+        headers: myHeaders,
+    })
+
+
 }
 
 export async function dummyGet() {

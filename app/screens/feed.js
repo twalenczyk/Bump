@@ -13,13 +13,14 @@ import Modal from 'react-native-modal'
 import styles from './styles'
 import { posts } from '../config/data'
 import { getUser } from '../lib/pulls'
+import { GetUsers } from '../lib/services/user-service'
 import AppHeader from '../components/app-header'
 import PostCardTouchable from '../components/post-card-touchable'
 
 class Feed extends Component {
     constructor(props) {
         super(props)
-        this.state = { user: getUser(this.props.navigation.state.params.user), modalVisible: false}
+        this.state = { userId: this.props.navigation.state.params.user, modalVisible: false}
     }
 
     postNavigate = (post) => {
@@ -34,6 +35,11 @@ class Feed extends Component {
         this.props.navigation.navigate('Profile', {'user': userId})
     }
 
+    componentWillMount() {
+        GetUsers(0).then((result) => {
+            this.setState({user: result})
+        })
+    }
     render () {
         return (
             <View style={styles.container}>

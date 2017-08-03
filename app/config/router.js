@@ -41,7 +41,7 @@ const MainNavigator = StackNavigator({
     },
     Feed: {
         screen: FeedTabs,
-        path: 'feed/:user'
+        path: 'feed/:userId'
     },
     Post: {
         screen: Post,

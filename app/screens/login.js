@@ -24,9 +24,9 @@ class Login extends Component {
 
     /** Local Storage functions **/
 
-    storeUserLocally = async (userId) => {
+    storeLocally = async (key, value) => {
         try {
-            await AsyncStorage.setItem('currentUser', userId.toString())
+            await AsyncStorage.setItem(key, value.toString())
             return 'User stored locally'
         } catch (error) {
             // do nothing
@@ -34,9 +34,9 @@ class Login extends Component {
 
     }
 
-    getLocalUser = async () => {
+    getLocal = async (key) => {
         try {
-            return await AsyncStorage.getItem('currentUser') // returns the locally stored id
+            return await AsyncStorage.getItem(key) // returns the locally stored id
         } catch (error) {
             // do nothing
         }
@@ -44,10 +44,8 @@ class Login extends Component {
 
     /** local nav and login functions **/
 
-    feedNavigate = (userId) => {
-        this.storeUserLocally(userId).then((result) => {
-            this.props.navigation.navigate('Feed', { user: userId })
-        })
+    feedNavigate = (id) => {
+        this.props.navigation.navigate('Feed', { userId: id })
     }
 
     badLogin = () => { alert('Bad Login') }
@@ -56,9 +54,21 @@ class Login extends Component {
         // let user = loginValidation(username, password)
         // user.exists ? this.feedNavigate(user.user.id) : this.badLogin()
         UserLogin(username, password).then((result) => {
-            // alert(JSON.stringify(result))
-            let user = loginValidation(username, password)
-            this.feedNavigate(user.user.id)
+            if(result.ok) {
+                // cookie is result.headers.get('Set-Cookie')
+                this.storeLocally('cookie', result.headers.get('Set-Cookie')).then((result) => {
+                    // TODO tests the cookie storage, works as of 9/3
+                    // this.getLocal('cookie').then((result) => {
+                    //     alert(result)
+                    // })
+                })
+
+                // TODO pass the user id from the response when Zane changes the server
+                this.storeLocally('currentUser', 0).then((result) => {
+                    // navigate to the next screen
+                    this.feedNavigate(0)
+                })
+            }
         })
     }
 
@@ -67,13 +77,13 @@ class Login extends Component {
     componentWillMount() {
 
         // snag the local user data then set the states accordingly
-        this.getLocalUser().then((result) => {
-            let localUser = result !== undefined ? getUser(result) : '' //@BUG this does not work at the moment. Will rework when Zane gets the server up.
-            if( localUser ) { // if local user exists, set the userName and password
-                this.setState({userName: localUser.name})
-                this.setState({password: localUser.password})
-            }
-        })
+        // this.getLocalUser().then((result) => {
+        //     let localUser = result !== undefined ? getUser(result) : '' //@BUG this does not work at the moment. Will rework when Zane gets the server up.
+        //     if( localUser ) { // if local user exists, set the userName and password
+        //         this.setState({userName: localUser.name})
+        //         this.setState({password: localUser.password})
+        //     }
+        // })
     }
 
     render () {
