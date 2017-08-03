@@ -36,6 +36,14 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         margin: 5,
     },
+    timestampContainer: {
+        flexDirection: 'row',
+        height: 20,
+    },
+    timestamp: {
+        fontSize: 10,
+        color: 'lightgrey'
+    },
 
     /** Connection Card Styles **/
 
@@ -94,7 +102,7 @@ const styles = StyleSheet.create({
     profilePicture: {
         width: 20,
         borderRadius: 10,
-        backgroundColor: 'white'
+        backgroundColor: 'blue'
     },
     cardHeaderRemainder: {
         flex: 1,

@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import {
     Text,
     View,
-    TouchableHighlight
+    TouchableHighlight,
+    ScrollView
 } from 'react-native'
 
 import styles from './styles'
+import { users } from '../config/data'
 
 class PostCard extends Component {
     constructor(props) {
@@ -29,6 +31,18 @@ class PostCard extends Component {
                 </View>
 
                 <View style={styles.cardBody}>
+                    <View style={styles.timestampContainer}>
+                        <Text style={styles.timestamp}>timestamp</Text>
+                        <ScrollView
+                            horizontal={true}
+                            >
+                            {
+                                users.map((item, index) => (
+                                    <View key={item.id} style={styles.profilePicture} />
+                                ))
+                            }
+                        </ScrollView>
+                    </View>
                     <Text>{this.state.content}</Text>
                 </View>
 
